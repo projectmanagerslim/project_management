@@ -1,0 +1,90 @@
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+<div class="container">
+    <h1>Mette à jour Affectationgroupe</h1>
+   
+    <a href="#" routerLink="/Affectationgroupe/index" class="btn btn-primary">Retour</a>
+          
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      
+
+   
+    
+        <div class="form-group">
+            <label for="idgroup">Title:</label>
+            <input 
+                formControlName="idgroup"
+                id="idgroup" 
+                type="text" 
+                [(ngModel)]="Affectiongroupe.idgroup"
+                class="form-control">
+            <div *ngIf="f['idgroup'].touched && f['_id'].invalid" class="alert alert-danger">
+                <div *ngIf="f['idgroup'].errors && f['idgroup'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="nomgroupe">dateAffectationgroupe:</label>
+            <input 
+                formControlName="nomgroupe"
+                id="nomgroupe" 
+                type="text" 
+                [(ngModel)]="Affectiongroupe.nomgroupe"
+                class="form-control">
+            <div *ngIf="f['nomgroupe'].touched && f['nomgroupe'].invalid" class="alert alert-danger">
+                <div *ngIf="f['nomgroupe'].errors && f['nomgroupe'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="membres">membres:</label>
+            <input 
+                formControlName="membres"
+                id="membres" 
+                type="membres" 
+                [(ngModel)]="Affectiongroupe.membres"
+                class="form-control">
+            <div *ngIf="f['membres'].touched && f['membres'].invalid" class="alert alert-danger">
+                <div *ngIf="f['membres'].errors && f['membres'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+   
+    <div class="form-group">
+        <label for="responsablegroupe">duree:</label>
+        <input 
+            formControlName="responsablegroupe"
+            id="responsablegroupe" 
+            type="type" 
+            [(ngModel)]="Affectiongroupe.responsablegroupe"
+            class="form-control">
+        <div *ngIf="f['responsablegroupe'].touched && f['responsablegroupe'].invalid" class="alert alert-danger">
+            <div *ngIf="f['responsablegroupe'].errors && f['responsablegroupe'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+
+    
+   
+    <div class="form-group">
+        <label for="objectifs">duree:</label>
+        <input 
+            formControlName="objectifs"
+            id="objectifs" 
+            type="type" 
+            [(ngModel)]="Affectiongroupe.objectifs"
+            class="form-control">
+        <div *ngIf="f['objectifs'].touched && f['objectifs'].invalid" class="alert alert-danger">
+            <div *ngIf="f['objectifs'].errors && f['objectifs'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+           
+
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Mette à Jour</button>
+    </form>
+</div>

@@ -1,0 +1,109 @@
+
+
+
+
+
+
+
+
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+
+<div class="container">
+    <h1>Créer Nouveau Avancementprojet</h1>
+  
+    <a href="#" routerLink="/post/index" class="btn btn-primary">Retour</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <label for="idprojet">id:</label>
+            <input 
+                formControlName="idprojet"
+                id="idprojet" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['idprojet'].touched && f['idprojet'].invalid" class="alert alert-danger">
+                <div *ngIf="f['idprojet'].errors && f['idprojet'].errors['required']">id is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Tache">Title:</label>
+            <input 
+                formControlName="Tache"
+                id="Tache" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['Tache'].touched && f['Tache'].invalid" class="alert alert-danger">
+                <div *ngIf="f['Tache'].errors && f['Tache'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="responsable">Title:</label>
+            <input 
+                formControlName="responsable"
+                id="duresponsableree" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['responsable'].touched && f['responsable'].invalid" class="alert alert-danger">
+                <div *ngIf="f['responsable'].errors && f['responsable'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="Datedébut">Title:</label>
+            <input 
+                formControlName="Datedébut"
+                id="Datedébut" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['Datedébut'].touched && f['Datedébut'].invalid" class="alert alert-danger">
+                <div *ngIf="f['Datedébut'].errors && f['Datedébut'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Datefinprevue">Title:</label>
+            <input 
+                formControlName="Datefinprevue"
+                id="Datefinprevue" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['Datefinprevue'].touched && f['Datefinprevue'].invalid" class="alert alert-danger">
+                <div *ngIf="f['Datefinprevue'].errors && f['Datefinprevue'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="Datefinreelle">Datefinreelle:</label>
+            <input 
+                formControlName="Datefinreelle"
+                id="Datefinreelle" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['Datefinreelle'].touched && f['Datefinreelle'].invalid" class="alert alert-danger">
+                <div *ngIf="f['Datefinreelle'].errors && f['Datefinreelle'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+
+        <div class="form-group">
+            <label for="progression">Datefinreelle:</label>
+            <input 
+                formControlName="progression"
+                id="progression" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['progression'].touched && f['progression'].invalid" class="alert alert-danger">
+                <div *ngIf="f['progression'].errors && f['progression'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+  
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Valider Opération</button>
+    </form>
+</div>

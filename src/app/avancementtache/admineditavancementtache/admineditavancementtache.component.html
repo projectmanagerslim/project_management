@@ -1,0 +1,75 @@
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+<div class="container">
+    <h1>Mette à jour Avancementtache</h1>
+   
+    <a href="#" routerLink="/Avancementtache/index" class="btn btn-primary">Retour</a>
+          
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      
+
+        <div class="form-group">
+            <label for="idAtache">Title:</label>
+            <input 
+                formControlName="idAtache"
+                id="idAtache" 
+                type="text" 
+                [(ngModel)]="Avancementtache.idAtache"
+                class="form-control">
+            <div *ngIf="f['idAtache'].touched && f['idAtache'].invalid" class="alert alert-danger">
+                <div *ngIf="f['idAtache'].errors && f['idAtache'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">dateavancementtache:</label>
+            <input 
+                formControlName="description"
+                id="description" 
+                type="text" 
+                [(ngModel)]="Avancementtache.description"
+                class="form-control">
+            <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+                <div *ngIf="f['description'].errors && f['description'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="qualite">qualite:</label>
+            <input 
+                formControlName="qualite"
+                id="qualite" 
+                type="text" 
+                [(ngModel)]="Avancementtache.qualite"
+                class="form-control">
+            <div *ngIf="f['qualite'].touched && f['qualité'].invalid" class="alert alert-danger">
+                <div *ngIf="f['qualite'].errors && f['qualite'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+   
+    <div class="form-group">
+        <label for="etat">etat:</label>
+        <input 
+            formControlName="etat"
+            id="etat" 
+            type="text" 
+            [(ngModel)]="Avancementtache.etat"
+            class="form-control">
+        <div *ngIf="f['etat'].touched && f['etat'].invalid" class="alert alert-danger">
+            <div *ngIf="f['etat'].errors && f['etat'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+           
+
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Mette à Jour</button>
+    </form>
+</div>

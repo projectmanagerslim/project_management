@@ -1,0 +1,50 @@
+
+
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+<div class="container">
+    <h1>Application Web Gestion Des Projets</h1>
+    <a href="#" routerLink="/Message/create/" class="btn btn-success">Créer Nouveau Message</a>
+
+
+
+      
+    <table class="table table-striped table-bordered">
+        <thead>
+              <tr>
+                <th>idmessage</th>
+                <th>idenvoie</th>
+                <th>idreception</th>
+                <th>sujet</th>
+                <th>texte</th>
+                <th>etat</th>
+                <th>datecreationmessage</th>
+                <th width="250px">Action</th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let Message of Messages">
+                <td>{{ Message.idmessage }}</td>
+                <td>{{ Message.idenvoie }}</td>
+                <td>{{ Message.idreception }}</td>
+                <td>{{ Message.sujet }}</td>
+                <td>{{ Message.texte }}</td>
+                <td>{{ Message.etat }}</td>
+                <td>{{ Message.datecreationmessage }}</td>
+                <td>
+                  <a href="#" [routerLink]="['/Message/', Message.idmessage, 'view']" class="btn btn-info">Consulter Détails</a>
+                  <a href="#" [routerLink]="['/Message/', Message.idenvoie, 'edit']" class="btn btn-primary">Modifier</a>
+                  <button type="button" (click)="deleteMessage(Message.idmessage)" class="btn btn-danger">Supprimer</button>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+</div>
+
+

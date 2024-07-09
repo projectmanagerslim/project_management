@@ -1,0 +1,43 @@
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+<div class="container">
+    <h1>Application Web Gestion Des Projets</h1>
+    <a href="#" routerLink="/Absence/create/" class="btn btn-success">Créer Nouveau Absence</a>
+
+
+      
+    <table class="table table-striped table-bordered">
+        <thead>
+              <tr>
+                <th>ID</th>
+                <th>username</th>
+                <th>password</th>
+                <th>email</th>
+                <th>role</th>
+                <th>permissions</th>
+                <th width="250px">Action</th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let Admin of Admins">
+                <td>{{ Admin.id }}</td>
+                <td>{{ Admin.username }}</td>
+                <td>{{ Admin.password }}</td>
+                <td>{{ Admin.email }}</td>
+                <td>{{ Admin.role }}</td>
+                <td>{{ Admin.permissions }}</td>
+                <td>
+                  <a href="#" [routerLink]="['/Admin/', Admin.id, 'view']" class="btn btn-info">Consulter Détails</a>
+                  <a href="#" [routerLink]="['/Admin/', Admin.id, 'edit']" class="btn btn-primary">Modifier</a>
+                  <button type="button" (click)="deleteAdmin(Admin.id)" class="btn btn-danger">Supprimer</button>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+</div>

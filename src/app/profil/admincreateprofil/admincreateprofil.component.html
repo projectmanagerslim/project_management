@@ -1,0 +1,75 @@
+
+
+
+
+
+
+
+
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+
+<div class="container">
+    <h1>Créer Nouveau Profil</h1>
+  
+    <a href="#" routerLink="/post/index" class="btn btn-primary">Retour</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <label for="id">id:</label>
+            <input 
+                formControlName="id"
+                id="id" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['id'].touched && f['id'].invalid" class="alert alert-danger">
+                <div *ngIf="f['id'].errors && f['id'].errors['required']">id is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="dateabsence">Title:</label>
+            <input 
+                formControlName="dateabsence"
+                id="dateabsence" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['dateabsence'].touched && f['dateabsence'].invalid" class="alert alert-danger">
+                <div *ngIf="f['dateabsence'].errors && f['dateabsence'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="duree">Title:</label>
+            <input 
+                formControlName="duree"
+                id="duree" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['duree'].touched && f['duree'].invalid" class="alert alert-danger">
+                <div *ngIf="f['duree'].errors && f['duree'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="typeabsence">Title:</label>
+            <input 
+                formControlName="typeabsence"
+                id="typeabsence" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['typeabsence'].touched && f['typeabsence'].invalid" class="alert alert-danger">
+                <div *ngIf="f['typeabsence'].errors && f['typeabsence'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+  
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Valider Opération</button>
+    </form>
+</div>

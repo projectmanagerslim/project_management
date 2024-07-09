@@ -1,0 +1,44 @@
+
+
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+<div class="container">
+    <h1>Application Web Gestion Des Projets</h1>
+    <a href="#" routerLink="/Conge/create/" class="btn btn-success">Créer Nouveau Conge</a>
+
+      
+    <table class="table table-striped table-bordered">
+        <thead>
+              <tr>
+                <th>id</th>
+                <th>description</th>
+                <th>datesortie</th>
+                <th>dateretour</th>
+                <th>etat</th>
+                <th width="250px">Action</th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let Conge of Conges">
+                <td>{{ Conge.id }}</td>
+                <td>{{ Conge.description }}</td>
+                <td>{{ Conge.datesortie }}</td>
+                <td>{{ Conge.dateretour }}</td>
+                <td>{{ Conge.etat }}</td>
+                <td>
+                  <a href="#" [routerLink]="['/Conge/', Conge.id, 'view']" class="btn btn-info">Consulter Détails</a>
+                  <a href="#" [routerLink]="['/Conge/', Conge.description, 'edit']" class="btn btn-primary">Modifier</a>
+                  <button type="button" (click)="deleteConge(Conge.id)" class="btn btn-danger">Supprimer</button>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+</div>
+
+

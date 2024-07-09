@@ -1,0 +1,40 @@
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+<div class="container">
+    <h1>Application Web Gestion Des Projets</h1>
+    <a href="#" routerLink="/Competence/create/" class="btn btn-success">Créer Nouveau Competence</a>
+      
+  
+    <table class="table table-striped table-bordered">
+        <thead>
+              <tr>
+                <th>id</th>
+                <th>nom</th>
+                <th>description</th>
+                <th>datecreation</th>
+                <th>etat</th>
+                <th width="250px">Action</th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let Competence of Competences">
+                <td>{{ Competence.id }}</td>
+                <td>{{ Competence.nom }}</td>
+                <td>{{ Competence.description }}</td>
+                <td>{{ Competence.datecreation }}</td>
+                <td>{{ Competence.etat }}</td>
+                <td>
+                  <a href="#" [routerLink]="['/Competence/', Competence.id, 'view']" class="btn btn-info">Consulter Détails</a>
+                  <a href="#" [routerLink]="['/Competence/', Competence.nom, 'edit']" class="btn btn-primary">Modifier</a>
+                  <button type="button" (click)="deleteCompetence(Competence.id)" class="btn btn-danger">Supprimer</button>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+</div>
+

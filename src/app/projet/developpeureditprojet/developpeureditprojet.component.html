@@ -1,0 +1,121 @@
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+<div class="container">
+    <h1>Mette à jour Projet</h1>
+   
+    <a href="#" routerLink="/Projet/index" class="btn btn-primary">Retour</a>
+          
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      
+
+    
+        <div class="form-group">
+            <label for="id">id:</label>
+            <input 
+                formControlName="id"
+                id="id" 
+                type="text" 
+                [(ngModel)]="Projet.id"
+                class="form-control">
+            <div *ngIf="f['id'].touched && f['id'].invalid" class="alert alert-danger">
+                <div *ngIf="f['id'].errors && f['id'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="nom">nom:</label>
+            <input 
+                formControlName="nom"
+                id="nom" 
+                type="text" 
+                [(ngModel)]="Projet.nom"
+                class="form-control">
+            <div *ngIf="f['nom'].touched && f['nom'].invalid" class="alert alert-danger">
+                <div *ngIf="f['nom'].errors && f['nom'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="budget">budget:</label>
+            <input 
+                formControlName="budget"
+                id="budget" 
+                type="text" 
+                [(ngModel)]="Projet.budget"
+                class="form-control">
+            <div *ngIf="f['budget'].touched && f['budget'].invalid" class="alert alert-danger">
+                <div *ngIf="f['budget'].errors && f['budget'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+   
+    <div class="form-group">
+        <label for="priorite">priorite:</label>
+        <input 
+            formControlName="priorite"
+            id="priorite" 
+            type="text" 
+            [(ngModel)]="Projet.priorite"
+            class="form-control">
+        <div *ngIf="f['priorite'].touched && f['priorite'].invalid" class="alert alert-danger">
+            <div *ngIf="f['priorite'].errors && f['priorite'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+
+       
+    <div class="form-group">
+        <label for="datedebut">datedebut:</label>
+        <input 
+            formControlName="datedebut"
+            id="datedebut" 
+            type="text" 
+            [(ngModel)]="Projet.datedebut"
+            class="form-control">
+        <div *ngIf="f['datedebut'].touched && f['datedebut'].invalid" class="alert alert-danger">
+            <div *ngIf="f['datedebut'].errors && f['datedebut'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+           
+
+       
+    <div class="form-group">
+        <label for="datefin">datefin:</label>
+        <input 
+            formControlName="datefin"
+            id="datefin" 
+            type="text" 
+            [(ngModel)]="Projet.datefin"
+            class="form-control">
+        <div *ngIf="f['datefin'].touched && f['datefin'].invalid" class="alert alert-danger">
+            <div *ngIf="f['datefin'].errors && f['datefin'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+           
+
+       
+    <div class="form-group">
+        <label for="datecreation">datecreation:</label>
+        <input 
+            formControlName="datecreation"
+            id="datecreation" 
+            type="text" 
+            [(ngModel)]="Projet.datecreation"
+            class="form-control">
+        <div *ngIf="f['datecreation'].touched && f['datecreation'].invalid" class="alert alert-danger">
+            <div *ngIf="f['datecreation'].errors && f['datecreation'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+           
+       
+           
+
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Mette à Jour</button>
+    </form>
+</div><p>developpeureditprojet works!</p>

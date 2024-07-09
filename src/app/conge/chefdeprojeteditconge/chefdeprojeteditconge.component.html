@@ -1,0 +1,87 @@
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+<div class="container">
+    <h1>Mette à jour Conge</h1>
+   
+    <a href="#" routerLink="/Conge/index" class="btn btn-primary">Retour</a>
+          
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+
+    
+        <div class="form-group">
+            <label for="id">Title:</label>
+            <input 
+                formControlName="id"
+                id="id" 
+                type="text" 
+                [(ngModel)]="Conge.id"
+                class="form-control">
+            <div *ngIf="f['id'].touched && f['id'].invalid" class="alert alert-danger">
+                <div *ngIf="f['id'].errors && f['id'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">description:</label>
+            <input 
+                formControlName="description"
+                id="description" 
+                type="text" 
+                [(ngModel)]="Conge.description"
+                class="form-control">
+            <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+                <div *ngIf="f['description'].errors && f['description'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="datesortie">datesortie:</label>
+            <input 
+                formControlName="datesortie"
+                id="datesortie" 
+                type="text" 
+                [(ngModel)]="Conge.datesortie"
+                class="form-control">
+            <div *ngIf="f['datesortie'].touched && f['datesortie'].invalid" class="alert alert-danger">
+                <div *ngIf="f['datesortie'].errors && f['datesortie'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+   
+    <div class="form-group">
+        <label for="dateretour">duree:</label>
+        <input 
+            formControlName="dateretour"
+            id="typeabsence" 
+            type="text" 
+            [(ngModel)]="Conge.dateretour"
+            class="form-control">
+        <div *ngIf="f['dateretour'].touched && f['dateretour'].invalid" class="alert alert-danger">
+            <div *ngIf="f['dateretour'].errors && f['dateretour'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="etat">etat:</label>
+        <input 
+            formControlName="etat"
+            id="etat" 
+            type="text" 
+            [(ngModel)]="Conge.dateretour"
+            class="form-control">
+        <div *ngIf="f['etat'].touched && f['etat'].invalid" class="alert alert-danger">
+            <div *ngIf="f['etat'].errors && f['etat'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+           
+
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Mette à Jour</button>
+    </form>
+</div>
