@@ -1,0 +1,49 @@
+
+
+
+
+
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+<div class="container">
+    <h1>Afficher détail  Tache</h1>
+  
+    <a href="#" routerLink="/Tache/index" class="btn btn-primary">Retour</a>
+   
+    <div>
+        <strong>ID:</strong>
+        <p>{{ Tache.id }}</p>
+    </div>
+   
+    <div>
+        <strong>id projet:</strong>
+        <p>{{ Tache.idprojet }}</p>
+    </div>
+   
+    <div>
+        <strong>description:</strong>
+        <p>{{ Tache.description }}</p>
+    </div>
+
+    <div>
+        <strong>actions:</strong>
+        <p>{{ Tache.actions }}</p>
+    </div>
+
+    <div>
+        <strong>datedebut:</strong>
+        <p>{{ Tache.datedebut }}</p>
+    </div>
+
+    <div>
+        <strong>datefin:</strong>
+        <p>{{ Tache.datefin }}</p>
+    </div>
+   
+</div>

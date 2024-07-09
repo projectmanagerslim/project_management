@@ -1,0 +1,100 @@
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+<div class="container">
+    <h1>Mette à jour Tache</h1>
+   
+    <a href="#" routerLink="/Tache/index" class="btn btn-primary">Retour</a>
+          
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      
+    
+
+        <div class="form-group">
+            <label for="id">Title:</label>
+            <input 
+                formControlName="id"
+                id="id" 
+                type="text" 
+                [(ngModel)]="Tache.id"
+                class="form-control">
+            <div *ngIf="f['id'].touched && f['id'].invalid" class="alert alert-danger">
+                <div *ngIf="f['id'].errors && f['id'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="idprojet">idprojet:</label>
+            <input 
+                formControlName="idprojet"
+                id="idprojet" 
+                type="text" 
+                [(ngModel)]="Tache.idprojet"
+                class="form-control">
+            <div *ngIf="f['idprojet'].touched && f['idprojet'].invalid" class="alert alert-danger">
+                <div *ngIf="f['idprojet'].errors && f['idprojet'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">description:</label>
+            <input 
+                formControlName="ddescriptionuree"
+                id="description" 
+                type="text" 
+                [(ngModel)]="Tache.description"
+                class="form-control">
+            <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+                <div *ngIf="f['description'].errors && f['description'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+   
+    <div class="form-group">
+        <label for="actions">actions:</label>
+        <input 
+            formControlName="actions"
+            id="actions" 
+            type="text" 
+            [(ngModel)]="Tache.actions"
+            class="form-control">
+        <div *ngIf="f['actions'].touched && f['actions'].invalid" class="alert alert-danger">
+            <div *ngIf="f['actions'].errors && f['actions'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+    <div class="form-group">
+        <label for="datedebut">datedebut:</label>
+        <input 
+            formControlName="datedebut"
+            id="datedebut" 
+            type="text" 
+            [(ngModel)]="Tache.actions"
+            class="form-control">
+        <div *ngIf="f['datedebut'].touched && f['datedebut'].invalid" class="alert alert-danger">
+            <div *ngIf="f['datedebut'].errors && f['datedebut'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+
+    <div class="form-group">
+        <label for="datefin">datefin:</label>
+        <input 
+            formControlName="datefin"
+            id="datefin" 
+            type="text" 
+            [(ngModel)]="Tache.actions"
+            class="form-control">
+        <div *ngIf="f['datefin'].touched && f['datefin'].invalid" class="alert alert-danger">
+            <div *ngIf="f['datefin'].errors && f['datefin'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+           
+
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Mette à Jour</button>
+    </form>
+</div>

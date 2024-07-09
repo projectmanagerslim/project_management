@@ -1,0 +1,48 @@
+
+
+
+
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+<div class="container">
+    <h1>Afficher détail  Administrateur</h1>
+  
+    <a href="#" routerLink="/Admin/index" class="btn btn-primary">Retour</a>
+   
+    <div>
+        <strong>ID:</strong>
+        <p>{{ Admin.id }}</p>
+    </div>
+   
+    <div>
+        <strong>username:</strong>
+        <p>{{ Admin.username }}</p>
+    </div>
+   
+    <div>
+        <strong>password:</strong>
+        <p>{{ Admin.password }}</p>
+    </div>
+
+    <div>
+        <strong>email:</strong>
+        <p>{{ Admin.email }}</p>
+    </div>
+    <div>
+        <strong>role:</strong>
+        <p>{{ Admin.role }}</p>
+    </div>
+    <div>
+        <strong>permissions:</strong>
+        <p>{{ Admin.permissions }}</p>
+    </div>
+
+   
+</div>
+

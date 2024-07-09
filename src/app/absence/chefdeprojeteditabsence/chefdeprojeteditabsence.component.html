@@ -1,0 +1,72 @@
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+<div class="container">
+    <h1>Mette à jour Absence</h1>
+   
+    <a href="#" routerLink="/Absence/index" class="btn btn-primary">Retour</a>
+          
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      
+    
+        <div class="form-group">
+            <label for="_id">Title:</label>
+            <input 
+                formControlName="_id"
+                id="_id" 
+                type="text" 
+                [(ngModel)]="Absence.id"
+                class="form-control">
+            <div *ngIf="f['_id'].touched && f['_id'].invalid" class="alert alert-danger">
+                <div *ngIf="f['_id'].errors && f['_id'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="dateabsence">dateabsence:</label>
+            <input 
+                formControlName="dateabsence"
+                id="dateabsence" 
+                type="text" 
+                [(ngModel)]="Absence.dateabsence"
+                class="form-control">
+            <div *ngIf="f['dateabsence'].touched && f['title'].invalid" class="alert alert-danger">
+                <div *ngIf="f['dateabsence'].errors && f['dateabsence'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="duree">duree:</label>
+            <input 
+                formControlName="duree"
+                id="duree" 
+                type="duree" 
+                [(ngModel)]="Absence.duree"
+                class="form-control">
+            <div *ngIf="f['duree'].touched && f['duree'].invalid" class="alert alert-danger">
+                <div *ngIf="f['duree'].errors && f['duree'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+   
+    <div class="form-group">
+        <label for="typeabsence">duree:</label>
+        <input 
+            formControlName="typeabsence"
+            id="typeabsence" 
+            type="typeabsence" 
+            [(ngModel)]="Absence.typeabsence"
+            class="form-control">
+        <div *ngIf="f['typeabsence'].touched && f['typeabsence'].invalid" class="alert alert-danger">
+            <div *ngIf="f['typeabsence'].errors && f['typeabsence'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+           
+
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Mette à Jour</button>
+    </form>
+</div>

@@ -1,0 +1,53 @@
+
+
+
+
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+<div class="container">
+    <h1>Afficher détail  Message</h1>
+  
+    <a href="#" routerLink="/Message/index" class="btn btn-primary">Retour</a>
+   
+    <div>
+        <strong>id message:</strong>
+        <p>{{ Message.idmessage }}</p>
+    </div>
+   
+    <div>
+        <strong>id envoie:</strong>
+        <p>{{ Message.idenvoie }}</p>
+    </div>
+   
+    <div>
+        <strong>id reception:</strong>
+        <p>{{ Message.idreception }}</p>
+    </div>
+
+    <div>
+        <strong>sujet:</strong>
+        <p>{{ Message.sujet }}</p>
+    </div>
+
+    <div>
+        <strong> texte:</strong>
+        <p>{{ Message.texte }}</p>
+    </div>
+
+    <div>
+        <strong>etat:</strong>
+        <p>{{ Message.etat }}</p>
+    </div>
+
+    <div>
+        <strong>date creation message:</strong>
+        <p>{{ Message.datecreationmessage }}</p>
+    </div>
+   
+</div>

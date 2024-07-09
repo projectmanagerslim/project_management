@@ -1,0 +1,35 @@
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+<div class="container">
+    <h1>Application Web Gestion Des Projets</h1>
+    <a href="#" routerLink="/Absence/create/" class="btn btn-success">Créer Nouveau Absence</a>
+      
+    <table class="table table-striped table-bordered">
+        <thead>
+              <tr>
+                <th>ID</th>
+                <th>dateabsence</th>
+                <th>typeabsence</th>
+                <th width="250px">Action</th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let Absence of Absences">
+                <td>{{ Absence.id }}</td>
+                <td>{{ Absence.dateabsence }}</td>
+                <td>{{ Absence.typeabsence }}</td>
+                <td>
+                  <a href="#" [routerLink]="['/Absence/', Absence.id, 'view']" class="btn btn-info">Consulter Détails</a>
+                  <a href="#" [routerLink]="['/Absence/', Absence.id, 'edit']" class="btn btn-primary">Modifier</a>
+                  <button type="button" (click)="deleteAbsence(Absence.id)" class="btn btn-danger">Supprimer</button>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+</div>

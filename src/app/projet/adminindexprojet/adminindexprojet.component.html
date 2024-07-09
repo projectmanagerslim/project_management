@@ -1,0 +1,45 @@
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+<div class="container">
+    <h1>Application Web Gestion Des Projets</h1>
+    <a href="#" routerLink="/Projet/create/" class="btn btn-success">Créer Nouveau Projet</a>
+
+
+    <table class="table table-striped table-bordered">
+        <thead>
+              <tr>
+                <th>id</th>
+                <th>nom</th>
+                <th>budget</th>
+                <th>priorite</th>
+                <th>datedebut</th>
+                <th>datefin</th>
+                <th>datecreation</th>
+                <th width="250px">Action</th>
+              </tr>
+        </thead>
+        <tbody>
+              <tr *ngFor="let Projet of Projets">
+                <td>{{ Projet.id }}</td>
+                <td>{{ Projet.nom }}</td>
+                <td>{{ Projet.budget }}</td>
+                <td>{{ Projet.priorite }}</td>
+                <td>{{ Projet.datedebut }}</td>
+                <td>{{ Projet.datefin }}</td>
+                <td>{{ Projet.datecreation }}</td>
+                <td>
+                  <a href="#" [routerLink]="['/Projet/', Projet.id, 'view']" class="btn btn-info">Consulter Détails</a>
+                  <a href="#" [routerLink]="['/Projet/', Projet.nom, 'edit']" class="btn btn-primary">Modifier</a>
+                  <button type="button" (click)="deleteProjet(Projet.id)" class="btn btn-danger">Supprimer</button>
+                </td>
+              </tr>
+        </tbody>
+    </table>
+</div>
+

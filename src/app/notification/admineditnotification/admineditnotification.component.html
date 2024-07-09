@@ -1,0 +1,77 @@
+
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+<div class="container">
+    <h1>Mette à jour Notification</h1>
+   
+    <a href="#" routerLink="/Notification/index" class="btn btn-primary">Retour</a>
+          
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+
+
+    
+        <div class="form-group">
+            <label for="idnotif">idnotif:</label>
+            <input 
+                formControlName="idnotif"
+                id="idnotif" 
+                type="idnotif" 
+                [(ngModel)]="Notification.idnotif"
+                class="form-control">
+            <div *ngIf="f['idnotif'].touched && f['idnotif'].invalid" class="alert alert-danger">
+                <div *ngIf="f['idnotif'].errors && f['idnotif'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="sujet">sujet:</label>
+            <input 
+                formControlName="sujet"
+                id="sujet" 
+                type="text" 
+                [(ngModel)]="Notification.sujet"
+                class="form-control">
+            <div *ngIf="f['sujet'].touched && f['sujet'].invalid" class="alert alert-danger">
+                <div *ngIf="f['sujet'].errors && f['sujet'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="duree">description:</label>
+            <input 
+                formControlName="description"
+                id="description" 
+                type="text" 
+                [(ngModel)]="Notification.description"
+                class="form-control">
+            <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+                <div *ngIf="f['description'].errors && f['description'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+   
+    <div class="form-group">
+        <label for="datecreation">datecreation:</label>
+        <input 
+            formControlName="datecreation"
+            id="datecreation" 
+            type="datecreation" 
+            [(ngModel)]="Notification.datecreation"
+            class="form-control">
+        <div *ngIf="f['datecreation'].touched && f['datecreation'].invalid" class="alert alert-danger">
+            <div *ngIf="f['datecreation'].errors && f['datecreation'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+           
+
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Mette à Jour</button>
+    </form>
+</div>
