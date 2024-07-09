@@ -1,0 +1,86 @@
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+<div class="container">
+    <h1>Mette à jour Competence</h1>
+   
+    <a href="#" routerLink="/Competence/index" class="btn btn-primary">Retour</a>
+          
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+      
+
+        <div class="form-group">
+            <label for="id">Title:</label>
+            <input 
+                formControlName="id"
+                id="id" 
+                type="text" 
+                [(ngModel)]="Competence.id"
+                class="form-control">
+            <div *ngIf="f['id'].touched && f['id'].invalid" class="alert alert-danger">
+                <div *ngIf="f['id'].errors && f['id'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="nom">nom:</label>
+            <input 
+                formControlName="nom"
+                id="nom" 
+                type="text" 
+                [(ngModel)]="Competence.nom"
+                class="form-control">
+            <div *ngIf="f['nom'].touched && f['nom'].invalid" class="alert alert-danger">
+                <div *ngIf="f['nom'].errors && f['nom'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">duree:</label>
+            <input 
+                formControlName="description"
+                id="description" 
+                type="text" 
+                [(ngModel)]="Competence.description"
+                class="form-control">
+            <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+                <div *ngIf="f['description'].errors && f['description'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+   
+    <div class="form-group">
+        <label for="datecreation">duree:</label>
+        <input 
+            formControlName="datecreation"
+            id="datecreation" 
+            type="text" 
+            [(ngModel)]="Competence.datecreation"
+            class="form-control">
+        <div *ngIf="f['datecreation'].touched && f['datecreation'].invalid" class="alert alert-danger">
+            <div *ngIf="f['datecreation'].errors && f['datecreation'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+    <div class="form-group">
+        <label for="etat">etat:</label>
+        <input 
+            formControlName="etat"
+            id="etat" 
+            type="text" 
+            [(ngModel)]="Competence.etat"
+            class="form-control">
+        <div *ngIf="f['etat'].touched && f['etat'].invalid" class="alert alert-danger">
+            <div *ngIf="f['etat'].errors && f['etat'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+           
+
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Mette à Jour</button>
+    </form>
+</div>

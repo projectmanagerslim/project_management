@@ -1,0 +1,100 @@
+
+
+
+
+
+
+
+
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+
+<div class="container">
+    <h1>Créer Nouveau Tache</h1>
+  
+    <a href="#" routerLink="/post/index" class="btn btn-primary">Retour</a>
+        
+    <form [formGroup]="form" (ngSubmit)="submit()">
+  
+        <div class="form-group">
+            <label for="id">id:</label>
+            <input 
+                formControlName="id"
+                id="id" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['id'].touched && f['id'].invalid" class="alert alert-danger">
+                <div *ngIf="f['id'].errors && f['id'].errors['required']">id is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="idprojet">Title:</label>
+            <input 
+                formControlName="idprojet"
+                id="idprojet" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['idprojet'].touched && f['idprojet'].invalid" class="alert alert-danger">
+                <div *ngIf="f['idprojet'].errors && f['idprojet'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="description">Title:</label>
+            <input 
+                formControlName="description"
+                id="description" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['description'].touched && f['description'].invalid" class="alert alert-danger">
+                <div *ngIf="f['description'].errors && f['description'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        
+        <div class="form-group">
+            <label for="actions">Title:</label>
+            <input 
+                formControlName="actions"
+                id="actions" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['actions'].touched && f['actions'].invalid" class="alert alert-danger">
+                <div *ngIf="f['actions'].errors && f['actions'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+        
+
+        <div class="form-group">
+            <label for="datedebut">Title:</label>
+            <input 
+                formControlName="actdatedebutions"
+                id="datedebut" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['datedebut'].touched && f['datedebut'].invalid" class="alert alert-danger">
+                <div *ngIf="f['datedebut'].errors && f['datedebut'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label for="datefin">Title:</label>
+            <input 
+                formControlName="datefin"
+                id="datefin" 
+                type="text" 
+                class="form-control">
+            <div *ngIf="f['datefin'].touched && f['datefin'].invalid" class="alert alert-danger">
+                <div *ngIf="f['datefin'].errors && f['datefin'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+  
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Valider Opération</button>
+    </form>
+</div>

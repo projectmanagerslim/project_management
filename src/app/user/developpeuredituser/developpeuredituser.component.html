@@ -1,0 +1,99 @@
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+<div class="container">
+    <h1>Mette à jour User</h1>
+   
+    <a href="#" routerLink="/User/index" class="btn btn-primary">Back</a>
+          
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+
+    
+        <div class="form-group">
+            <label for="id">Title:</label>
+            <input 
+                formControlName="id"
+                id="id" 
+                type="text" 
+                [(ngModel)]="User.id"
+                class="form-control">
+            <div *ngIf="f['id'].touched && f['id'].invalid" class="alert alert-danger">
+                <div *ngIf="f['id'].errors && f['id'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="nom">nom:</label>
+            <input 
+                formControlName="nom"
+                id="nom" 
+                type="text" 
+                [(ngModel)]="User.nom"
+                class="form-control">
+            <div *ngIf="f['nom'].touched && f['nom'].invalid" class="alert alert-danger">
+                <div *ngIf="f['nom'].errors && f['nom'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="prenom">prenom:</label>
+            <input 
+                formControlName="prenom"
+                id="prenom" 
+                type="text" 
+                [(ngModel)]="User.prenom"
+                class="form-control">
+            <div *ngIf="f['prenom'].touched && f['prenom'].invalid" class="alert alert-danger">
+                <div *ngIf="f['prenom'].errors && f['prenom'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+   
+    <div class="form-group">
+        <label for="mdp">mdp:</label>
+        <input 
+            formControlName="mdp"
+            id="mdp" 
+            type="text" 
+            [(ngModel)]="User.mdp"
+            class="form-control">
+        <div *ngIf="f['mdp'].touched && f['mdp'].invalid" class="alert alert-danger">
+            <div *ngIf="f['mdp'].errors && f['mdp'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+
+    <div class="form-group">
+        <label for="datecreation">mdp:</label>
+        <input 
+            formControlName="mdp"
+            id="datecreation" 
+            type="text" 
+            [(ngModel)]="User.datecreation"
+            class="form-control">
+        <div *ngIf="f['datecreation'].touched && f['datecreation'].invalid" class="alert alert-danger">
+            <div *ngIf="f['datecreation'].errors && f['datecreation'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+
+    
+    <div class="form-group">
+        <label for="statut">statut:</label>
+        <input 
+            formControlName="statut"
+            id="statut" 
+            type="text" 
+            [(ngModel)]="User.statut"
+            class="form-control">
+        <div *ngIf="f['statut'].touched && f['statut'].invalid" class="alert alert-danger">
+            <div *ngIf="f['statut'].errors && f['statut'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+           
+
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Mette à Jour</button>
+    </form>
+</div>

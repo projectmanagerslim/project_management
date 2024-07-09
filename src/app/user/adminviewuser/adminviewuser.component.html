@@ -1,0 +1,53 @@
+
+
+
+
+nom: string;
+prenom: string;
+mdp: string;
+datecreation: Date;
+statut: string;
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+<div class="container">
+    <h1>Afficher détail  User</h1>
+  
+    <a href="#" routerLink="/User/index" class="btn btn-primary">Retour</a>
+   
+    <div>
+        <strong>ID:</strong>
+        <p>{{ User.id }}</p>
+    </div>
+   
+    <div>
+        <strong>nom:</strong>
+        <p>{{ User.nom }}</p>
+    </div>
+   
+    <div>
+        <strong>prenom:</strong>
+        <p>{{ User.prenom }}</p>
+    </div>
+
+    <div>
+        <strong>mdp:</strong>
+        <p>{{ User.mdp }}</p>
+    </div>
+
+    <div>
+        <strong>datecreation:</strong>
+        <p>{{ User.datecreation }}</p>
+    </div>
+
+    <div>
+        <strong>statut:</strong>
+        <p>{{ User.statut }}</p>
+    </div>
+   
+</div>

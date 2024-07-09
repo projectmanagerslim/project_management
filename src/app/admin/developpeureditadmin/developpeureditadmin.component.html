@@ -1,0 +1,100 @@
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+<div class="container">
+    <h1>Mette à jour Administrateur</h1>
+   
+    <a href="#" routerLink="/Admin/index" class="btn btn-primary">Retour</a>
+          
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+
+    
+        <div class="form-group">
+            <label for="id">id:</label>
+            <input 
+                formControlName="id"
+                id="id" 
+                type="text" 
+                [(ngModel)]="admin.id"
+                class="form-control">
+            <div *ngIf="f['id'].touched && f['id'].invalid" class="alert alert-danger">
+                <div *ngIf="f['id'].errors && f['id'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="username">username:</label>
+            <input 
+                formControlName="username"
+                id="username" 
+                type="text" 
+                [(ngModel)]="admin.username"
+                class="form-control">
+            <div *ngIf="f['username'].touched && f['username'].invalid" class="alert alert-danger">
+                <div *ngIf="f['username'].errors && f['username'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="password">password:</label>
+            <input 
+                formControlName="password"
+                id="password" 
+                type="text" 
+                [(ngModel)]="admin.password"
+                class="form-control">
+            <div *ngIf="f['password'].touched && f['password'].invalid" class="alert alert-danger">
+                <div *ngIf="f['password'].errors && f['password'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+   
+    <div class="form-group">
+        <label for="email">email:</label>
+        <input 
+            formControlName="email"
+            id="email" 
+            type="text" 
+            [(ngModel)]="admin.email"
+            class="form-control">
+        <div *ngIf="f['email'].touched && f['email'].invalid" class="alert alert-danger">
+            <div *ngIf="f['email'].errors && f['email'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+
+    <div class="form-group">
+        <label for="role">role:</label>
+        <input 
+            formControlName="role"
+            id="role" 
+            type="text" 
+            [(ngModel)]="admin.role"
+            class="form-control">
+        <div *ngIf="f['role'].touched && f['role'].invalid" class="alert alert-danger">
+            <div *ngIf="f['role'].errors && f['role'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+
+    <div class="form-group">
+        <label for="permissions">permissions:</label>
+        <input 
+            formControlName="permissions"
+            id="permissions" 
+            type="text" 
+            [(ngModel)]="admin.permissions"
+            class="form-control">
+        <div *ngIf="f['permissions'].touched && f['permissions'].invalid" class="alert alert-danger">
+            <div *ngIf="f['permissions'].errors && f['permissions'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+           
+
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Mette à Jour</button>
+    </form>
+</div>

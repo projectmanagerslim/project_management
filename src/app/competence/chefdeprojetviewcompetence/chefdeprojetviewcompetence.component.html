@@ -1,0 +1,41 @@
+
+
+
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+<div class="container">
+    <h1>Afficher détail  Competence </h1>
+  
+    <a href="#" routerLink="/Competence /index" class="btn btn-primary">Retour</a>
+   
+    <div>
+        <strong>id:</strong>
+        <p>{{ Competence .id }}</p>
+    </div>
+   
+    <div>
+        <strong>nom:</strong>
+        <p>{{ Competence .nom }}</p>
+    </div>
+   
+    <div>
+        <strong>description :</strong>
+        <p>{{ Competence .description }}</p>
+    </div>
+
+    <div>
+        <strong>datecreation :</strong>
+        <p>{{ Competence .datecreation }}</p>
+    </div>
+
+    <div>
+        <strong>etat :</strong>
+        <p>{{ Competence .etat }}</p>
+    </div>
+
+   
+   
+</div>

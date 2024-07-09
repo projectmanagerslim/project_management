@@ -1,0 +1,115 @@
+<app-adminheader></app-adminheader>
+<app-adminmenu></app-adminmenu>
+<app-adminfooter></app-adminfooter>
+
+
+
+<div class="container">
+    <h1>Mette à jour Message</h1>
+   
+    <a href="#" routerLink="/Message/index" class="btn btn-primary">Retour</a>
+          
+    <form [formGroup]="form" (ngSubmit)="submit()">
+
+    
+    
+        <div class="form-group">
+            <label for="idmessage">Title:</label>
+            <input 
+                formControlName="idmessage"
+                id="idmessage" 
+                type="text" 
+                [(ngModel)]="Message.idmessage"
+                class="form-control">
+            <div *ngIf="f['idmessage'].touched && f['idmessage'].invalid" class="alert alert-danger">
+                <div *ngIf="f['idmessage'].errors && f['idmessage'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="idenvoie">idenvoie:</label>
+            <input 
+                formControlName="idenvoie"
+                id="idenvoie" 
+                type="text" 
+                [(ngModel)]="Message.idenvoie"
+                class="form-control">
+            <div *ngIf="f['idenvoie'].touched && f['idenvoie'].invalid" class="alert alert-danger">
+                <div *ngIf="f['idenvoie'].errors && f['idenvoie'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+        <div class="form-group">
+            <label for="idreception">idreception:</label>
+            <input 
+                formControlName="idreception"
+                id="idreception" 
+                type="text" 
+                [(ngModel)]="Message.idreception"
+                class="form-control">
+            <div *ngIf="f['idreception'].touched && f['idreception'].invalid" class="alert alert-danger">
+                <div *ngIf="f['idreception'].errors && f['idreception'].errors['required']">Title is required.</div>
+            </div>
+        </div>
+
+   
+    <div class="form-group">
+        <label for="sujet">sujet:</label>
+        <input 
+            formControlName="sujet"
+            id="sujet" 
+            type="text" 
+            [(ngModel)]="Message.sujet"
+            class="form-control">
+        <div *ngIf="f['sujet'].touched && f['sujet'].invalid" class="alert alert-danger">
+            <div *ngIf="f['sujet'].errors && f['sujet'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+       
+    
+
+    
+    <div class="form-group">
+        <label for="texte">texte:</label>
+        <input 
+            formControlName="texte"
+            id="texte" 
+            type="text" 
+            [(ngModel)]="Message.texte"
+            class="form-control">
+        <div *ngIf="f['texte'].touched && f['texte'].invalid" class="alert alert-danger">
+            <div *ngIf="f['texte'].errors && f['texte'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+
+      
+      
+    <div class="form-group">
+        <label for="etat">etat:</label>
+        <input 
+            formControlName="etat"
+            id="etat" 
+            type="text" 
+            [(ngModel)]="Message.etat"
+            class="form-control">
+        <div *ngIf="f['etat'].touched && f['etat'].invalid" class="alert alert-danger">
+            <div *ngIf="f['etat'].errors && f['etat'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+
+    
+    <div class="form-group">
+        <label for="datecreationmessage">datecreationmessage:</label>
+        <input 
+            formControlName="datecreationmessage"
+            id="datecreationmessage" 
+            type="text" 
+            [(ngModel)]="Message.datecreationmessage"
+            class="form-control">
+        <div *ngIf="f['datecreationmessage'].touched && f['datecreationmessage'].invalid" class="alert alert-danger">
+            <div *ngIf="f['datecreationmessage'].errors && f['datecreationmessage'].errors['required']">Title is required.</div>
+        </div>
+    </div>
+
+         
+        <button class="btn btn-primary" type="submit" [disabled]="!form.valid">Mette à Jour</button>
+    </form>
+</div>
